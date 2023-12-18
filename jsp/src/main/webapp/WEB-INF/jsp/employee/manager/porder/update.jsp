@@ -23,12 +23,12 @@
 			<td>原本日期
 			<td><%=p.getOrdertime() %>
 			<td>想要修改的日期
-			<input type="date" name="ordertime"><br>
+			<input type="datetime-local" name="ordertime"><br>
 		<tr>
 			<td>原本人數
 			<td><%=p.getNumber() %>
 			<td>想要修改的人數
-			<input type="text" name="number" oninput="value=value.replace(/[^\d]/g,'')"><br>
+			<input type="number" name="number" oninput="value=value.replace(/[^\d]/g,'')"><br>
 		<tr>
 			<td>原本電話
 			<td><%=p.getPhone() %>

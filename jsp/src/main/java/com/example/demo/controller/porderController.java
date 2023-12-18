@@ -180,12 +180,10 @@ public class porderController {
         
         // 从会话中获取原始订位信息
         porder p = (porder) session.getAttribute("D");
-        System.out.println(porderId);
-        // 检查订位信息是否存在
 
             pm.deleteById(porderId);
-            // 调用 porderMapper 更新订位信息
-            // 返回到一个成功更新的页面或者重定向到其他页面
+            session.removeAttribute("D");
+
             return "porder/deleteSuccess";
         
     }

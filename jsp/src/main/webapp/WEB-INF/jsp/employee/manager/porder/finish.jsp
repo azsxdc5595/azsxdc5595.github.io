@@ -5,7 +5,7 @@
  <%
 porder p=(porder)session.getAttribute("P");
  
- member m=(member)session.getAttribute("M");
+member m=(member)session.getAttribute("M");
  %>
 <!DOCTYPE html>
 <html>
