@@ -35,9 +35,11 @@ public interface memberMapper {
 	
 	
 	//update
-	@Update("update member set name=#{name},password=#{password},email=#{email} where id=#{id}")
-	void update(member m);
+	@Update("update member set name=#{name},email=#{email} where id=#{id}")
+	void updateMember(member m);
 	
+	@Update("update member set password=#{password} where id=#{id}")
+	void updatePassword(member m);
 	
 	//delete
 	@Delete("delete from member where id=#{id}")

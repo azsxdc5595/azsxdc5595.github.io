@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/porder/porder2">1)新增訂位</a><br>
-<a href="/porder/viewAll">2)查詢及更改、刪除所有訂位</a><br>
-<a href="/employee/system">回管理系統</a>
+<h1>新密碼不能與舊密碼相同</h1>
+<a href="/member/gotoChangePassword">重新輸入</a>
 </body>
 </html>

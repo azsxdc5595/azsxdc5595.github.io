@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>登入成功</h3>
+<h3>註冊成功</h3>
 <a href="/employee/Employee">重新登入</a>
 </body>
 </html>

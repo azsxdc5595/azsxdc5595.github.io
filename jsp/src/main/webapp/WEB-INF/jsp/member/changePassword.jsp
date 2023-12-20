@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/porder/porder2">1)新增訂位</a><br>
-<a href="/porder/viewAll">2)查詢及更改、刪除所有訂位</a><br>
-<a href="/employee/system">回管理系統</a>
+<form action="/member/changePassword" method="post">
+輸入新密碼:<input type="password" name="newPassword"><br>
+<input type="submit" value="修改密碼"> 
+</form>
 </body>
 </html>

@@ -8,6 +8,6 @@
 </head>
 <body>
 <h3>帳號重複!</h3>
-<a href="employee/addEmployee">重新註冊</a>
+<a href="/employee/addEmployee">重新註冊</a>
 </body>
 </html>

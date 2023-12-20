@@ -24,45 +24,5 @@ public class employee {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getType() {
-		// TODO Auto-generated method stub
-		return type;
-	}
 	
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
-	}
-	
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return username;
-	}
-	
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return password;
-	}
-	
-	public String getPhone() {
-		// TODO Auto-generated method stub
-		return phone;
-	}
-	
-	public Integer getId() {
-		// TODO Auto-generated method stub
-		return id;
-	}
-	public String getEmployeeno() {
-		// TODO Auto-generated method stub
-		return employeeno;
-	}
-	public void setPassword(String newPassword) {
-		this.password = newPassword;
-		
-	}
-	public void setType(Integer newType) {
-		this.type = newType;
-		
-	}
 }

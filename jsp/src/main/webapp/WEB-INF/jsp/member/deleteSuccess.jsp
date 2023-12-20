@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/porder/porder2">1)新增訂位</a><br>
-<a href="/porder/viewAll">2)查詢及更改、刪除所有訂位</a><br>
-<a href="/employee/system">回管理系統</a>
+<h1>刪除成功</h1>
+<a href="/member/">回首頁</a>
 </body>
 </html>

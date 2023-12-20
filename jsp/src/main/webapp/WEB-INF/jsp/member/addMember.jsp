@@ -10,7 +10,7 @@
 <form action="/member/add" method="post">
 ©m¦W:<input type="text" name="name"><br>
 ±b¸¹:<input type="text" name="username"><br>
-±K½X:<input type="password" name="password"><br>
+±K½X:<input type="password" name="password" minlength="6"><br>
 e-mail:<input type="text" name="email"><br>
 <input type="submit" value="ok">
 </form>

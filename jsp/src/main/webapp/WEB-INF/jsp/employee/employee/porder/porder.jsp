@@ -7,13 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
 	<form action="/porder/confirm2" method="post">
-		桌號:<Input type="text" name="deskno"><br> 日期:<input
-			type="date" name="ordertime"><br> 人數:<input type="text"
-			name="number" oninput="value=value.replace(/[^\d]/g,'')"><br>
-		電話:<input type="tel" name="phone"><br> <input
-			type="submit" value="ok">
+		桌號:<Input type="text" name="deskno"><br> 
+		日期:<input type="date" name="ordertime"><br> 
+		人數:<input type="number" name="number" min="1" oninput="value=value.replace(/[^\d]/g,'')"><br>
+		電話:<input type="tel" name="phone"><br> 
+		<input type="submit" value="ok">
 	</form>
 </body>
 </html>

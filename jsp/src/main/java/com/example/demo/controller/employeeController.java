@@ -126,6 +126,75 @@ public class employeeController {
 		return "/employee/manager/employee/changeSuccess";
 	}
 	
+	@RequestMapping(value = "changePhone",method = {RequestMethod.GET, RequestMethod.POST})
+	public String gotoChangePhone(@RequestParam("employeeName") String employeeName,
+            @RequestParam("employeePhone") String employeePhone)
+	{
+		employee e = em.getEmployeeByName(employeeName);
+		session.setAttribute("CP", e);
+		return "/employee/manager/employee/changePhone";
+	}
+	
+	@RequestMapping(value="changePhoneSuccess")
+	public String changePhoneSuccess(@RequestParam("employeePhone") String employeePhone)
+	{
+		employee e =(employee) session.getAttribute("CP");
+		
+		e.setPhone(employeePhone);
+		em.updatePhone(e);
+		
+		session.removeAttribute("CP");
+		session.removeAttribute("E");
+		
+		return "/employee/manager/employee/changeSuccess";
+	}
+	
+	@RequestMapping(value = "changePassword2",method = {RequestMethod.GET, RequestMethod.POST})
+	public String gotoChangePassword2(@RequestParam("employeeName") String employeeName,
+            @RequestParam("employeePassword") String employeePassword)
+	{
+		employee e = em.getEmployeeByName(employeeName);
+		session.setAttribute("C", e);
+		return "/employee/employee/changePassword";
+	}
+	
+	@RequestMapping(value="changeSuccess2")
+	public String changeSuccess2(@RequestParam("employeePassword") String employeePassword)
+	{
+		employee e =(employee) session.getAttribute("C");
+		
+		e.setPassword(employeePassword);
+		em.updatePassword(e);
+		
+		session.removeAttribute("C");
+		session.removeAttribute("E");
+		
+		return "/employee/employee/changeSuccess";
+	}
+	
+	@RequestMapping(value = "changePhone2",method = {RequestMethod.GET, RequestMethod.POST})
+	public String gotoChangePhone2(@RequestParam("employeeName") String employeeName,
+            @RequestParam("employeePhone") String employeePhone)
+	{
+		employee e = em.getEmployeeByName(employeeName);
+		session.setAttribute("CP", e);
+		return "/employee/employee/changePhone";
+	}
+	
+	@RequestMapping(value="changePhoneSuccess2")
+	public String changePhoneSuccess2(@RequestParam("employeePhone") String employeePhone)
+	{
+		employee e =(employee) session.getAttribute("CP");
+		
+		e.setPhone(employeePhone);
+		em.updatePhone(e);
+		
+		session.removeAttribute("CP");
+		session.removeAttribute("E");
+		
+		return "/employee/employee/changeSuccess";
+	}
+	
 	@RequestMapping("queryAll")
 	public String gotoQueryAll(HttpServletRequest request)
 	{
@@ -147,10 +216,10 @@ public class employeeController {
 	}
 	
 	@RequestMapping(value="changePositionSuccess")
-	public String changePositionSuccess(@RequestParam("employeeName")String employeeName,@RequestParam("employeeType")Integer employeeType)
+	public String changePositionSuccess(@RequestParam("employeeName")String employeeName,Integer newType)
 	{
 		employee e=(employee)session.getAttribute("Position");
-		e.setType(employeeType);
+		e.setType(newType);
 		em.updateType(e);
 		session.removeAttribute("Position");
 		

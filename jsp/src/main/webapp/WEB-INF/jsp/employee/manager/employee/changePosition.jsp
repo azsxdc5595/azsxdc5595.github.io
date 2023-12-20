@@ -16,12 +16,13 @@
 			<tr>
 				<td width=100>原本職位
 				<td><%=e.getType() %>
-				<td>新職位
 			<tr>
 				<td colspan=3 aligh=center>
-				<input type="radio" name="employeeType" value="2">經理
-				<input type="radio" name="employeeType" value="1">課長
-				<input type="radio" name="employeeType" value="0">社員
+				新的職位:
+				<select name="newType">
+    			<option value="1">課長</option>
+    			<option value="0" selected>社員</option>
+				</select>
 			<tr>
 				<td colspan=3 aligh=center>
 				<a href="/employee/managerEmployees">回到管理員工資料</a>

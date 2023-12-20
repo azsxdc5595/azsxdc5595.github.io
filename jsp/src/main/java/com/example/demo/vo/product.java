@@ -18,15 +18,4 @@ public class product {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public String getProductno() {
-		return productno;
-	}
-	
-	public String getProductname() {
-		return productname;
-	}
-	
-	public Integer getPrice() {
-		return price;
-	}
 }

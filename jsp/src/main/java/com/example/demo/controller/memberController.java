@@ -75,4 +75,54 @@ public class memberController {
 	{
 		return "function";
 	}
+	
+	@RequestMapping("gotoQuery")
+	public String gotoQuery()
+	{
+		return "/member/query";
+	}
+	
+	@RequestMapping("gotoChangePassword")
+	public String gotoChangePassword()
+	{
+		return "/member/changePassword";
+	}
+	
+	@RequestMapping("changePassword")
+	public String changePassword(String password,String newPassword)
+	{
+		member m=(member) session.getAttribute("M");
+		if(m.getPassword().equals(newPassword))
+		{
+			return "/member/changePasswordError1";
+		}
+		else {
+			 if (newPassword == null || newPassword.trim().isEmpty()) 
+			 {
+				 return "/member/changePasswordError2";
+			 }
+			 else {
+				 m.setPassword(newPassword);
+				 mm.updatePassword(m);
+				 session.removeAttribute("M");
+				 return "/member/changePasswordSuccess";
+			}
+		}
+	}
+	
+	@RequestMapping("gotoDeleteMember")
+	public String gotoDeleteMember()
+	{
+		return "/member/deleteMember";
+	}
+	
+	@RequestMapping("deleteMember")
+	public String deleteMember(Integer id)
+	{
+		member m=(member) session.getAttribute("M");
+		int id1=m.getId();
+		mm.delete(id1);
+		session.removeAttribute("M");
+		return "/member/deleteSuccess";
+	}
 }

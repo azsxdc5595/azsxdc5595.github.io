@@ -28,7 +28,7 @@
 			<td>原本人數
 			<td><%=p.getNumber() %>
 			<td>想要修改的人數
-			<input type="text" name="number" oninput="value=value.replace(/[^\d]/g,'')"><br>
+			<input type="text" name="number" min="1" oninput="value=value.replace(/[^\d]/g,'')"><br>
 		<tr>
 			<td>原本電話
 			<td><%=p.getPhone() %>

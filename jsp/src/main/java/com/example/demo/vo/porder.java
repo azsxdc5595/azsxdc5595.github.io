@@ -27,42 +27,6 @@ public class porder {
         // TODO Auto-generated constructor stub
     }
 
-    public String getDeskno() {
-        return deskno;
-    }
-
-    public Date getOrdertime() {
-        return ordertime;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getMemberno() {
-        return memberno;
-    }
-    
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setOrdertime(Date newOrdertime) {
-        this.ordertime = newOrdertime;
-    }
-    
-    public void setPhone(String newPhone) {
-        this.phone = newPhone;
-    }
-    
-    public void setNumber(String newNumber) {
-        this.number = newNumber;
-    }
-
 	
 }
 

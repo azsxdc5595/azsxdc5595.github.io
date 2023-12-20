@@ -1,5 +1,8 @@
 package com.example.demo.vo;
 
+import lombok.Data;
+
+@Data
 public class member {
 	private Integer id;
 	private String memberno;
@@ -24,10 +27,6 @@ public class member {
 	public String getMemberno() {
 		// TODO Auto-generated method stub
 		return memberno;
-	}
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
 	}
 	
 }

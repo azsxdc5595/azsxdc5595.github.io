@@ -14,8 +14,8 @@ import com.example.demo.vo.porder;
 @Mapper
 public interface employeeMapper {
 	//create
-	@Insert("insert into employee(employeeno,name,username,password,type) "
-			+ "values(#{employeeno},#{name},#{username},#{password},#{type})")
+	@Insert("insert into employee(employeeno,name,username,password,phone,type) "
+			+ "values(#{employeeno},#{name},#{username},#{password},#{phone},#{type})")
 	void add(employee e);
 	
 	
@@ -40,6 +40,9 @@ public interface employeeMapper {
 	
 	@Update("update employee set type=#{type} where id=#{id}")
 	void updateType(employee e);
+	
+	@Update("update employee set phone=#{phone} where id=#{id}")
+	void updatePhone(employee e);
 	
 	@Select("select * from employee where name=#{name}")
 	employee getEmployeeByName(@Param("name")  String employeeName);
