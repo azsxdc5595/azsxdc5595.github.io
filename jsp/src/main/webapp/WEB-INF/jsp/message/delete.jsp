@@ -7,10 +7,14 @@ member m1=(member)session.getAttribute("M");%>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
 <form action="/message/delete" method="post">
-<table aligh=center border=1>
+<table align=center border=1>
 	<tr>
 		<td colspan=2 align=center>
 		<%=m1.getName() %>，這是你原本的留言內容
@@ -27,5 +31,10 @@ member m1=(member)session.getAttribute("M");%>
 		<input type="submit" value="確定刪除">
 </table>
 </form>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+
 </body>
 </html>

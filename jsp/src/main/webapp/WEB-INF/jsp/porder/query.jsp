@@ -8,12 +8,16 @@
 <html>
 <head>
 <title>所有訂位</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea3">
 
 	<h2>所有訂位</h2>
 
-	<table border="1">
+	<table border="1" align=center style="font-size:18px">
 		<thead>
 			<tr>
 				<th>桌號</th>
@@ -41,6 +45,11 @@
 			
 		</tbody>
 	</table>
+
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
 
 </body>
 </html>

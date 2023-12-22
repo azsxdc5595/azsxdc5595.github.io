@@ -1,0 +1,50 @@
+@charset "UTF-8";
+#header{
+	background-color:#abc4ff;
+	width:50%;
+	margin-left:25%;
+	height:75px;
+}
+#content{
+	background-color:#edf2fb;
+	width:50%;
+	margin-left:25%;
+	height:550px;
+	text-align:center;
+}
+#main{
+	background-color:#c1d3fe;
+	width:50%;
+	margin-left:25%;
+	height:170px;
+}
+#footer{
+	background-color:#b6ccfe;
+	width:50%;
+	margin-left:25%;
+	height:100px;
+}
+
+#contentArea{
+	text-align:center;
+	padding-top:10%;
+	font-size:16pt
+}
+
+#contentArea2{
+	text-align:center;
+	padding-top:2%;
+	font-size:15pt
+}
+
+#contentArea3{
+	text-align:center;
+	padding-top:1%;
+	font-size:16pt
+}
+
+#title{
+	text-align:center;
+	padding-top:2%;
+	font-size:20pt
+}

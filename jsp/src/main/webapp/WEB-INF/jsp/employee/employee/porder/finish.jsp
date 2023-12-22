@@ -5,19 +5,23 @@
  <%
 porder p=(porder)session.getAttribute("P");
  
- member m=(member)session.getAttribute("M");
+member m=(member)session.getAttribute("M");
  %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
 <table width=400 align=center border=1>
 		<tr>
 			<td colspan=2 align=center>
-			<%=m.getName() %>訂位完成 , 這是你的訂位詳細資料
+			這是新的訂位詳細資料
 		<tr>
 			<td width=100>桌號
 			<td><%=p.getDeskno() %>
@@ -32,8 +36,13 @@ porder p=(porder)session.getAttribute("P");
 			<td><%=p.getPhone() %>
 		<tr>
 			<td colspan=2 align=center>
-			<a href="/member/function">返回會員專區</a>
+			<a href="/employee/system2">回管理系統</a>
 			
 	</table>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+
 </body>
 </html>

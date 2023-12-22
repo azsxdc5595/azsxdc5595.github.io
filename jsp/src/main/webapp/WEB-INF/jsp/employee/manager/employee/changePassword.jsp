@@ -9,12 +9,16 @@ employee e=(employee)session.getAttribute("E");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<form action="/employee/changeSuccess" method="post">
-	<table border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<form action="/employee/changeSuccess" method="post">
+	<table border=1 align=center>
 		<tr>
-			<td colspan=3 aligh=center><%=e.getName()%>，請輸入想要的新密碼
+			<td colspan=3 align=center><%=e.getName()%>，請輸入想要的新密碼
 		<tr>
 			<td width=100>原本密碼
 			<td><%=e.getPassword() %>
@@ -27,5 +31,10 @@ employee e=(employee)session.getAttribute("E");
 			<input type="submit" value="確定">
 	</table>
 	</form>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

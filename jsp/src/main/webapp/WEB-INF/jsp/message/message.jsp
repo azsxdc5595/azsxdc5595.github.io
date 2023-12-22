@@ -8,13 +8,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<h2>所有留言</h2>	
-	<table border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<h2>所有留言</h2>	
+	<table border=1 align=center>
 		<thead>
 			<tr>
-				<th>會員名</th>
+				<th>會員編號</th>
 				<th>文章標題</th>
 				<th>文章內容</th>
 			</tr>
@@ -31,5 +35,10 @@
 		</tbody>
 	</table>
 	<a href="/message/addMessage">新增留言</a>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

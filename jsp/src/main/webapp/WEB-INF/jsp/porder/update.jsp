@@ -9,10 +9,13 @@
 <html>
 <head>
     <title>更新订位信息</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-
-    <h2>更新订位信息</h2>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea2">
+<h2>更新订位信息</h2>
 
     <form action="/porder/update" method="post">
     <table width=400 align=center border=1>
@@ -26,17 +29,17 @@
 			<td>原本日期
 			<td><%=p.getOrdertime() %>
 			<td>想要修改的日期
-			<input type="date" name="ordertime"><br>
+			<input type="date" name="ordertime" required><br>
 		<tr>
 			<td>原本人數
 			<td><%=p.getNumber() %>
 			<td>想要修改的人數(超過12人請來電預約)
-			<input type="number" name="number" min="1" max="12" oninput="value=value.replace(/[^\d]/g,'')"><br>
+			<input type="number" name="number" min="1" max="12" oninput="value=value.replace(/[^\d]/g,'')" required><br>
 		<tr>
 			<td>原本電話
 			<td><%=p.getPhone() %>
 			<td>想要修改的電話
-			<input type="tel" name="phone"><br>
+			<input type="tel" name="phone" required><br>
 		<tr>
 			<td colspan=3 align=center>
 			<a href="/member/function">回會員專區</a>
@@ -45,5 +48,10 @@
     </form>
         
 
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+    
 </body>
 </html>

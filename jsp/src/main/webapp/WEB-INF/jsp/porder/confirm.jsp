@@ -18,9 +18,13 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<table width=400 align=center border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<table width=400 align=center border=1>
 		<tr>
 			<td colspan=2 align=center>
 			<%=m.getName() %> 這是你的訂位資料
@@ -42,5 +46,10 @@
 			<a href="/porder/finish">確定</a>
 	</table>
 
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

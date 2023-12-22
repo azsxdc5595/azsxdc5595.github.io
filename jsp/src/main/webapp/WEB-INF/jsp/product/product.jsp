@@ -8,10 +8,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-    <h1>菜單</h1>
-	<table border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+
+<div id="contentArea2">
+<span style=font-size:18px><B>菜單</B></span>
+	<table border=1 align=center>
 		<thead>
 			<tr>
 				<th>菜色編號</th>
@@ -29,6 +34,11 @@
 		<%} %>
 		</tbody>
 	</table>
-	<a href="/member/">回上一頁</a>
+	<a href="/member/function">回會員專區</a>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+    
 </body>
 </html>

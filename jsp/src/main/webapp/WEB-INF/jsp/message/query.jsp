@@ -8,9 +8,13 @@ List<message> m = (List<message>) session.getAttribute("Q");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<table border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<table border=1 align=center>
 		<thead>
 			<tr>
 				<th>會員編號</th>
@@ -34,5 +38,10 @@ List<message> m = (List<message>) session.getAttribute("Q");
 				
 		</tbody>
 	</table>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

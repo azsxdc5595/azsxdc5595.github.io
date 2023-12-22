@@ -10,8 +10,12 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
 <table width=400 align=center border=1>
 		<tr>
 			<td colspan=2 align=center>修改訂位完成 , 這是新的訂位詳細資料
@@ -31,5 +35,10 @@
 			<td colspan=2 align=center>
 			<a href="/employee/system">進入管理系統</a>
 	</table>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+
 </body>
 </html>

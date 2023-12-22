@@ -6,8 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
 <form action="/activity/update" method="post">
 	<table width=600 border=1 align=center>
 		<tr>
@@ -32,5 +36,10 @@
 			<input type="submit" value="更改">
 	</table>
 </form>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+
 </body>
 </html>

@@ -31,6 +31,12 @@ public class activityController {
 		return "/employee/manager/activity/activity";
 	}
 	
+	@RequestMapping("activity2")
+	public String activity2()
+	{
+		return "/employee/employee/activity/activity";
+	}
+	
 	@RequestMapping("addActivity")
 	public String addActivity()
 	{
@@ -59,6 +65,14 @@ public class activityController {
 		List<activity> a=am.queryAll();
 		session.setAttribute("A", a);
 		return "/activity/query";
+	}
+	
+	@RequestMapping("query3")
+	public String query3(HttpServletRequest request)
+	{
+		List<activity> a=am.queryAll();
+		session.setAttribute("A", a);
+		return "/employee/employee/activity/query";
 	}
 	
 	@RequestMapping(value="gotoUpdate",method = RequestMethod.GET)

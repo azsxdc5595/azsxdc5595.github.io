@@ -116,14 +116,23 @@ public class employeeController {
 	public String changeSuccess(@RequestParam("employeePassword") String employeePassword)
 	{
 		employee e =(employee) session.getAttribute("C");
+		employee e1=(employee) session.getAttribute("E");
 		
-		e.setPassword(employeePassword);
-		em.updatePassword(e);
+		if(e1.getPassword().equals(employeePassword) || employeePassword == null || employeePassword.trim().isEmpty())
+		{
+			return "/employee/manager/employee/changeError";
+		}
+		else {
+			e.setPassword(employeePassword);
+			em.updatePassword(e);
+			
+			session.removeAttribute("C");
+			session.removeAttribute("E");
+			
+			return "/employee/manager/employee/changeSuccess";
+		}
 		
-		session.removeAttribute("C");
-		session.removeAttribute("E");
 		
-		return "/employee/manager/employee/changeSuccess";
 	}
 	
 	@RequestMapping(value = "changePhone",method = {RequestMethod.GET, RequestMethod.POST})
@@ -162,14 +171,22 @@ public class employeeController {
 	public String changeSuccess2(@RequestParam("employeePassword") String employeePassword)
 	{
 		employee e =(employee) session.getAttribute("C");
+		employee e1=(employee)session.getAttribute("E");
+		if(e1.getPassword().equals(employeePassword) || employeePassword == null || employeePassword.trim().isEmpty())
+		{
+			return "/employee/employee/changeError";
+		}
+		else {
+			e.setPassword(employeePassword);
+			em.updatePassword(e);
+			
+			session.removeAttribute("C");
+			session.removeAttribute("E");
+			
+			return "/employee/employee/changeSuccess";
+		}
 		
-		e.setPassword(employeePassword);
-		em.updatePassword(e);
 		
-		session.removeAttribute("C");
-		session.removeAttribute("E");
-		
-		return "/employee/employee/changeSuccess";
 	}
 	
 	@RequestMapping(value = "changePhone2",method = {RequestMethod.GET, RequestMethod.POST})
@@ -236,5 +253,12 @@ public class employeeController {
 	public String gotoProduct()
 	{
 		return "/employee/manager/product/product";
+	}
+	
+	@RequestMapping("logout")
+	public String logout()
+	{
+		session.removeAttribute("E");
+		return "/employee/logout";
 	}
 }

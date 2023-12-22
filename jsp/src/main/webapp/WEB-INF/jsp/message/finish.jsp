@@ -9,11 +9,15 @@ message m=(message)session.getAttribute("message");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
 <h1>請確認新增的文章內容</h1>
 <form action="/message/finish" method="post">
-<table aligh=center border=1>
+<table align=center border=1>
 	<tr>
 		<td aligh=center>會員編號
 		<td><%=m.getMemberno() %>
@@ -29,5 +33,10 @@ message m=(message)session.getAttribute("message");
 		<a href="/member/function">返回會員專區</a>
 </table>
 </form>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+
 </body>
 </html>

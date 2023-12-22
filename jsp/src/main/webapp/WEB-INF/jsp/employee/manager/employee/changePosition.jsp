@@ -7,12 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<form action="/employee/changePositionSuccess" method="post">
-		<table border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<form action="/employee/changePositionSuccess" method="post">
+		<table border=1 align=center>
 			<tr>
-				<td colspan=3 aligh=center>員工姓名，<%=e.getName() %>
+				<td colspan=3 align=center>員工姓名，<%=e.getName() %>
 			<tr>
 				<td width=100>原本職位
 				<td><%=e.getType() %>
@@ -30,5 +34,10 @@
 				<input type="submit" value="確定">
 		</table>
 	</form>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

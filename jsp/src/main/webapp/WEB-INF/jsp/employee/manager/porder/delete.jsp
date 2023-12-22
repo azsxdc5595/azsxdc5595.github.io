@@ -7,8 +7,12 @@
 <html>
 <head>
     <title>更新订位信息</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
 
     <h2>更新订位信息</h2>
 
@@ -37,6 +41,11 @@
 	</table>
     </form>
         
+
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
 
 </body>
 </html>

@@ -8,10 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<h2>所有留言</h2>	
-	<table border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea2">
+<span style=font-size:20pt><B>所有留言</B></span>
+	<table border=1 align=center>
 		<thead>
 			<tr>
 				<th>會員名</th>
@@ -31,5 +35,10 @@
 		</tbody>
 	</table>
 	<a href="/employee/system">返回管理系統</a>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

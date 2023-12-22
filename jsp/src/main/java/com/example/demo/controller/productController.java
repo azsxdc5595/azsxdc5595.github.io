@@ -53,10 +53,21 @@ public class productController {
 		return "/employee/employee/product/product";
 	}
 	
+	@RequestMapping("product4")
+	public String product4(HttpServletRequest request)
+	{
+		List<product> p=pm.queryAll();
+		session.setAttribute("products", p);
+		for(product product:p) {
+			
+		}
+		return "/product/product2";
+	}
+	
 	@RequestMapping("addProduct")
 	public String addProduct()
 	{
-		return "/product/addProduct";
+		return "/employee/manager/product/addProduct";
 	}
 	
 	@RequestMapping("add")
@@ -66,6 +77,6 @@ public class productController {
 		session.setAttribute("product", p);
 		pm.add(p);
 		
-		return "/product/addProductSuccess";
+		return "/employee/manager/product/addProductSuccess";
 	}
 }

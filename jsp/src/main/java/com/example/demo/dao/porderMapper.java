@@ -16,7 +16,9 @@ public interface porderMapper {
 	//create
 	@Insert("insert into porder(deskno,memberno,ordertime,number,phone)" + "values(#{deskno},#{memberno},#{ordertime},#{number},#{phone})")
 	void add(porder p);
-	
+	//create
+	@Insert("insert into porder(deskno,ordertime,number,phone)" + "values(#{deskno},#{ordertime},#{number},#{phone})")
+	void add2(porder p);
 	
 	//read
 	@Select("select * from porder")

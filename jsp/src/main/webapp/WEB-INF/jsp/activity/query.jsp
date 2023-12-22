@@ -6,9 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../css/st1.css">
 </head>
 <body>
-	<table border=1 align=center>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<table border=1 align=center>
 		<thead>
 			<tr>
 				<th>活動編號
@@ -28,5 +32,12 @@
 			<%} %>
 		</tbody>
 	</table>
+</div>
+<br><br><br><br><br>
+<a href="/member/function" style="font-size:30px">回會員專區</a>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

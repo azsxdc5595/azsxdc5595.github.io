@@ -66,6 +66,69 @@ public class porderController {
 		return "/porder/query";
 	}
 
+	@RequestMapping(value = "gotoUpdate3", method = RequestMethod.GET)
+	public String gotoupdate3(@RequestParam("porderId") Integer porderId,
+            @RequestParam("ordertime") @DateTimeFormat(pattern = "yyyy-MM-dd") java.util.Date ordertime,
+            @RequestParam("number") String number,
+            @RequestParam("phone") String phone)
+	{
+		porder p = pm.getPorderById(porderId);
+		session.setAttribute("U", p);
+		return "/employee/employee/porder/update";
+	}
+
+	@PostMapping("update3")
+    public String update3(
+            @RequestParam("ordertime") @DateTimeFormat(pattern = "yyyy-MM-dd") java.util.Date ordertime,
+            @RequestParam("number") String number, @RequestParam("phone") String phone) {
+        
+        // 从会话中获取原始订位信息
+        porder p = (porder) session.getAttribute("U");
+
+        // 检查订位信息是否存在
+       
+            // 更新订位信息的属性
+            p.setOrdertime(new Date(ordertime.getTime()));
+            p.setNumber(number);
+            p.setPhone(phone);
+        
+            pm.updatePorder(p);
+            session.setAttribute("U2", p);
+            // 调用 porderMapper 更新订位信息
+            session.removeAttribute("U");
+
+
+            // 返回到一个成功更新的页面或者重定向到其他页面
+            return "/employee/employee/porder/updateSuccess";
+        
+    }
+	
+	@RequestMapping(value = "gotoDelete3", method = RequestMethod.GET)
+	public String gotoDelete3(@RequestParam("porderId") Integer porderId
+            )
+	{
+		porder p = pm.getPorderById(porderId);
+		session.setAttribute("D", p);
+		return "/employee/employee/porder/delete";
+	}
+
+	@PostMapping("delete3")
+    public String delete3(
+    		@RequestParam("porderId") Integer porderId) {
+        
+        // 从会话中获取原始订位信息
+        porder p = (porder) session.getAttribute("D");
+        System.out.println(porderId);
+        // 检查订位信息是否存在
+
+            pm.deleteById(porderId);
+            // 调用 porderMapper 更新订位信息
+            // 返回到一个成功更新的页面或者重定向到其他页面
+            return "/employee/employee/porder/deleteSuccess";
+        
+    }
+	
+	
 	@RequestMapping(value = "gotoUpdate2", method = RequestMethod.GET)
 	public String gotoupdate2(@RequestParam("porderId") Integer porderId,
             @RequestParam("ordertime") @DateTimeFormat(pattern = "yyyy-MM-dd") java.util.Date ordertime,
@@ -192,6 +255,12 @@ public class porderController {
 	public String gotoManager() {
 		return "/employee/manager/porder/manager";
 	}
+	
+	@RequestMapping("manager2")
+	public String gotoManager2() {
+		return "/employee/employee/porder/manager";
+	}
+
 
 	@RequestMapping("confirm2")
 	public String ManagerConfirm(String deskno, String memberno, Date ordertime, String number, String phone) {
@@ -199,18 +268,38 @@ public class porderController {
 		session.setAttribute("P", p);
 		return "/employee/manager/porder/confirm";
 	}
+	
+	@RequestMapping("confirm3")
+	public String employeeConfirm(String deskno, String memberno, Date ordertime, String number, String phone) {
+		porder p = new porder(deskno, memberno, ordertime, number, phone);
+		session.setAttribute("P", p);
+		return "/employee/employee/porder/confirm";
+	}
 
 	@RequestMapping("porder2")
 	public String ManagerPorder() {
 		return "/employee/manager/porder/porder";
 	}
+	
+	@RequestMapping("porder3")
+	public String employeePorder() {
+		return "/employee/employee/porder/porder";
+	}
 
 	@RequestMapping("finish2")
 	public String ManagerFinish() {
 		porder p = (porder) session.getAttribute("P");
-		pm.add(p);
+		pm.add2(p);
 
 		return "/employee/manager/porder/finish";
+	}
+	
+	@RequestMapping("finish3")
+	public String employeeFinish() {
+		porder p = (porder) session.getAttribute("P");
+		pm.add2(p);
+
+		return "/employee/employee/porder/finish";
 	}
 
 	@RequestMapping("viewAll")
@@ -223,4 +312,13 @@ public class porderController {
 		return "employee/manager/porder/queryAll";
 	}
 
+	@RequestMapping("viewAll2")
+	public String employeeViewAll(HttpServletRequest request) {
+		List<porder> p = pm.queryAll();
+		session.setAttribute("porders", p);
+		for (porder porder : p) {
+
+		}
+		return "employee/employee/porder/queryAll";
+	}
 }

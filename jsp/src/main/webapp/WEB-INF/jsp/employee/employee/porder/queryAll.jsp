@@ -7,12 +7,16 @@
 <html>
 <head>
 <title>所有訂位</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea2">
 
 	<h2>所有訂位</h2>
 
-	<table border="1">
+	<table border="1" align="center">
 		<thead>
 			<tr>
 				<th>桌號</th>
@@ -32,14 +36,19 @@
 				<td><%=porder.getOrdertime()%></td>
 				<td><%=porder.getNumber()%></td>
 				<td><%=porder.getPhone()%>
-				<td><a href="/porder/gotoUpdate2?porderId=<%=porder.getId()%>&ordertime=<%=new java.text.SimpleDateFormat("yyyy-MM-dd").format(porder.getOrdertime())%>&number=<%=porder.getNumber()%>&phone=<%=porder.getPhone() %>">更改這筆訂位</a></td>
-				<td><a href="/porder/gotoDelete2?porderId=<%=porder.getId()%>">刪除這筆訂位</a></td>
+				<td><a href="/porder/gotoUpdate3?porderId=<%=porder.getId()%>&ordertime=<%=new java.text.SimpleDateFormat("yyyy-MM-dd").format(porder.getOrdertime())%>&number=<%=porder.getNumber()%>&phone=<%=porder.getPhone() %>">更改這筆訂位</a></td>
+				<td><a href="/porder/gotoDelete3?porderId=<%=porder.getId()%>">刪除這筆訂位</a></td>
 			<%
 			}
 			%>
 			
 		</tbody>
 	</table>
+	<a href="/employee/system2">回管理系統</a>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
 
 </body>
 </html>

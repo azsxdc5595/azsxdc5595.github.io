@@ -16,9 +16,13 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<table width=400 align=center border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<table width=400 align=center border=1>
 		<tr>
 			<td colspan=2 align=center>
 		<tr>
@@ -35,9 +39,14 @@
 			<td><%=p.getPhone() %>
 		<tr>
 			<td colspan=2 align=center>
-			<a href="/porder/porder2">回上一頁</a>
+			<a href="/employee/system">回管理系統</a>
 			<a href="/porder/finish2">確定</a>
 	</table>
 
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>

@@ -21,7 +21,7 @@ public interface messageMapper {
 	@Select("select * from message")
 	List<message> queryAll();
 	
-	@Select("select * from message")
+	@Select("select * from message where memberno=#{memberno}")
 	List<message> queryByMemberno(String memberno);
 	
 	@Select("select * from message where id=#{id}")

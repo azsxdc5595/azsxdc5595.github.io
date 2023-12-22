@@ -8,9 +8,13 @@ employee e=(employee)session.getAttribute("E"); %>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-	<table width=400 align=center border=1>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea">
+<table width=400 align=center border=1>
 		<tr>
 			<td colspan=2 align=center>
 			<%=e.getName() %> 這是你的員工資料
@@ -32,5 +36,10 @@ employee e=(employee)session.getAttribute("E"); %>
 			<a href="/employee/changePassword?employeeName=<%=e.getName()%>&employeePassword=<%=e.getPassword() %>">更改密碼</a>
 			<a href="/employee/changePhone?employeeName=<%=e.getName()%>&employeePhone=<%=e.getPhone() %>">更改電話</a>
 	</table>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+	
 </body>
 </html>
