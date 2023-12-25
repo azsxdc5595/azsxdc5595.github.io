@@ -14,6 +14,9 @@
 <div id="contentArea">
 	<table width=400 border=1 align=center>
 		<tr>
+			<td>會員編號
+			<td><%=m.getMemberno() %>
+		<tr>
 			<td>帳號
 			<td><%=m.getUsername() %>
 		<tr>

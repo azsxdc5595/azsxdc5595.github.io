@@ -21,7 +21,7 @@
 <a href="/member/gotoQuery">8)查看個人帳號資訊</a><br>
 <a href="/member/gotoChangePassword">9)修改密碼</a><br>
 <a href="/member/gotoDeleteMember">10)刪除帳號</a><br>
-<a href="/porder/logout">X)登出</a>
+<a href="/porder/logout">11)登出</a>
 </div>
 </div>
 <div id="main"></div>
