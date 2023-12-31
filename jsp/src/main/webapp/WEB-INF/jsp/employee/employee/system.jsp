@@ -13,8 +13,8 @@
 <div id="contentArea">
 <a href="/porder/manager2">1)管理訂位資料</a><br>
 <a href="/employee/managerEmployee">2)個人員工資料</a><br>
-<a href="/product/product3">3)管理商品</a><br>
-<a href="/activity/activity2">4)管理活動</a><br>
+<a href="/product/product3">3)查看商品</a><br>
+<a href="/activity/activity2">4)查看活動</a><br>
 <a href="/employee/logout">5)登出</a>
 </div>
 </div>

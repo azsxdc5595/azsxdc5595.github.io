@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
+</head>
+<body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="navigater"></div>
+<div id="content">
+	<div >
+		<table align=center id="contentArea">
+			<tr>
+				<td><h3>登入成功</h3>
+			<tr>
+				<td>親愛的<span th:text="${session.M.name}"/>，歡迎回來
+			<tr>
+				<td><a href="/member/function">進入會員專區</a>
+		</table>
+	</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+</body>
+</html>

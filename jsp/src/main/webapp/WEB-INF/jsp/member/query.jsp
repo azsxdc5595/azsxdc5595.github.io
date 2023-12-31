@@ -27,9 +27,11 @@
 			<td><%=m.getEmail() %>
 		<tr>
 			<td colspan=2 align=center>
-			<a href="/member/function">回會員專區</a>			
-	</table>
+			<a href="/member/function">回會員專區</a>				<a href="/member/gotoChangePassword">修改密碼</a>
+			<a href="/member/gotoDeleteMember">刪除帳號</a>
 	
+	</table>
+
 </div>
 </div>
 <div id="main"></div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
+</head>
+<body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea2">
+<h3><p th:text="${session.M.name}"></p><p>這是你的會員資料</p></h3>
+		<table width=450 border=1 align=center>
+			<thead>
+				<tr>
+					<td>會員編號
+					<td th:text="${session.M.memberno}">
+				<tr>
+					<td>會員名
+					<td th:text="${session.M.name}">
+				<tr>					
+					<td>帳號
+					<td th:text="${session.M.username}">
+				<tr>					
+					<td>郵箱
+					<td th:text="${session.M.email}">
+				<tr>					
+					<td>總消費金額
+					<td th:text="${session.M.cash}">
+				</tr>
+			</tbody>
+				<tr>
+					<td colspan=5 align=center>
+					<a href="/member/function">回會員專區</a><br>
+		</table>
+		<br>
+					<a href="/member/gotoChangePassword">修改密碼</a>
+					<a href="/member/gotoChangeEmail">修改郵箱</a>
+					<a href="/member/gotoDeleteMember">刪除帳號</a>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+</body>
+</html>

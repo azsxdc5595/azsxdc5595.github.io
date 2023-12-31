@@ -19,9 +19,7 @@
 <a href="/message/message">6)看所有評論</a><br>
 <a href="/message/query">7)更改自己的評論</a><br>
 <a href="/member/gotoQuery">8)查看個人帳號資訊</a><br>
-<a href="/member/gotoChangePassword">9)修改密碼</a><br>
-<a href="/member/gotoDeleteMember">10)刪除帳號</a><br>
-<a href="/porder/logout">11)登出</a>
+<a href="/porder/logout">9)登出</a>
 </div>
 </div>
 <div id="main"></div>

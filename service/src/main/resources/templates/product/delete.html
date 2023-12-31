@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
+</head>
+<body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea2">
+<h1>親愛的<span th:text="${session.DID.name}"/>你好<br>請確認這筆要刪除的內容</h1>
+	<form action="/porder/delete" method="post">
+		<table border=1 align=center>
+			<tr>
+				<td>品名
+				<td th:text="${session.DID.productname}">
+			<tr>
+				<td>數量
+				<td th:text="${session.DID.amount}">
+			<tr>
+				<td>售價
+				<td th:text="${session.DID.price}">
+			<tr>
+				<td colspan=2 align="center"> <input type="submit" value="確定取消"><br>
+				<a href="/member/function">回會員專區</a>
+		</table>
+	</form>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+</body>
+</html>

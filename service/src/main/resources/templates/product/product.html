@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
+</head>
+<body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+<div id="contentArea2">
+<h3><p th:text="${session.M.name}"/><p></p></h3>
+		<table width=450 border=1 align=center>
+			<thead>
+				<tr>
+					<th>商品代號
+					<th>品名
+					<th>售價
+				</th>
+			</thead>
+			<tbody>
+				<tr th:each="emp:${session.P}">
+					<td th:text="${emp.productno}">
+					<td th:text="${emp.productname}">
+					<td th:text="${emp.price}">
+					<td><a th:href="@{/product/gotoPorder(productname=${emp.productname},price=${emp.price})}">加入購物車</a>
+				</tr>
+			</tbody>
+				<tr>
+					<td colspan=4 align=center>
+					<a href="/porder/query">查看購物車</a><br>
+					<a href="/member/function">回會員專區</a>
+		</table>
+</div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+</body>
+</html>

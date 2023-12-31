@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import="com.example.demo.vo.product"
+    import="com.example.demo.vo.product, com.github.pagehelper.PageInfo"
     import="java.util.*"%>
-<%List<product> p=(List<product>)session.getAttribute("products"); %>
+<%PageInfo<product> pageInfo = (PageInfo<product>) session.getAttribute("products");
+List<product> products = pageInfo.getList();
+int currentPage = pageInfo.getPageNum();
+int totalPages = pageInfo.getPages(); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,21 +22,36 @@
 	<table border=1 align=center>
 		<thead>
 			<tr>
-				<th>菜色編號</th>
 				<th>品名</th>
 				<th>價目</th>
 		</thead>
 	
-		<%for(product product:p){ %>
+		<%for(product product:products){ %>
 		<tbody>
 		<tr>
-			<td><%=product.getProductno() %></td>
 			<td><%=product.getProductname() %></td>
 			<td><%=product.getPrice() %></td>
 	
 		<%} %>
 		</tbody>
 	</table>
+	
+	<!-- 分頁信息 -->
+            <div style="text-align: center; margin-top: 10px;">
+                    <!-- 上一頁 -->
+                    <a class="<%=pageInfo.isHasPreviousPage() ? "" : "disabled"%>"
+                        href="/product/product?page=<%=pageInfo.getPrePage()%>&size=<%=pageInfo.getPageSize()%>">&laquo; 上一頁</a>
+
+                    <!-- 顯示分頁數字 -->
+                    <% for (int pageNum = 1; pageNum <= totalPages; pageNum++) { %>
+                        <a class="<%=pageNum == currentPage ? "active" : ""%>"
+                            href="/product/product?page=<%=pageNum%>&size=<%=pageInfo.getPageSize()%>"><%=pageNum%></a>
+                    <% } %>
+
+                    <!-- 下一頁 -->
+                    <a class="<%=pageInfo.isHasNextPage() ? "" : "disabled"%>"
+                        href="/product/product?page=<%=pageInfo.getNextPage()%>&size=<%=pageInfo.getPageSize()%>">下一頁 &raquo;</a>
+            </div>
 	<a href="/member/function">回會員專區</a>
 </div>
 </div>

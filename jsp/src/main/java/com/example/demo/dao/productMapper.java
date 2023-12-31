@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.product;
+import com.github.pagehelper.Page;
 @Mapper
 public interface productMapper {
 	//create
@@ -17,7 +18,7 @@ public interface productMapper {
 	
 	//read
 	@Select("select * from product")
-	List<product> queryAll();
+	Page<product> queryAll();
 	
 	//update
 	@Update("update product set productno=#{productno},productname=#{productname},price=#{price} where id=#{id}")

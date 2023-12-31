@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import="com.example.demo.vo.message"
-    import="java.util.*"%>
-<%List<message> m=(List<message>)session.getAttribute("messages");%>
+    import="com.example.demo.vo.message, java.util.*, com.github.pagehelper.PageInfo"%>
+<%
+    PageInfo<message> pageInfo = (PageInfo<message>) session.getAttribute("message2");
+    List<message> messages = pageInfo.getList();
+    int currentPage = pageInfo.getPageNum();
+    int totalPages = pageInfo.getPages();
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,34 +16,49 @@
 <link rel="stylesheet" href="/css/st1.css">
 </head>
 <body>
-<div id="header"><div id="title">Ares system</div></div>
-<div id="content">
-<div id="contentArea2">
-<span style=font-size:20pt><B>所有留言</B></span>
-	<table border=1 align=center>
-		<thead>
-			<tr>
-				<th>會員名</th>
-				<th>文章標題</th>
-				<th>文章內容</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%
-			for(message message:m){
-			%>
-			<tr>
-				<td><%=message.getMemberno() %></td>
-				<td><%=message.getTitle() %></td>
-				<td><%=message.getContent() %></td>
-			<%} %>
-		</tbody>
-	</table>
-	<a href="/employee/system">返回管理系統</a>
-</div>
-</div>
-<div id="main"></div>
-<div id="footer"></div>
-	
+    <div id="header">
+        <div id="title">Ares system</div>
+    </div>
+    <div id="content">
+        <div id="contentArea">
+            <table border="1" align="center">
+                <thead>
+                    <tr>
+                        <th>文章標題</th>
+                        <th>文章內容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (message msg : messages) { %>
+                        <tr>
+                            <td><%=msg.getTitle()%></td>
+                            <td><%=msg.getContent()%></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+
+            <!-- 分頁信息 -->
+            <div style="text-align: center; margin-top: 10px;">
+                    <!-- 上一頁 -->
+                    <a class="<%=pageInfo.isHasPreviousPage() ? "" : "disabled"%>"
+                        href="/message/message2?page=<%=pageInfo.getPrePage()%>&size=<%=pageInfo.getPageSize()%>">&laquo; 上一頁</a>
+
+                    <!-- 顯示分頁數字 -->
+                    <% for (int pageNum = 1; pageNum <= totalPages; pageNum++) { %>
+                        <a class="<%=pageNum == currentPage ? "active" : ""%>"
+                            href="/message/message2?page=<%=pageNum%>&size=<%=pageInfo.getPageSize()%>"><%=pageNum%></a>
+                    <% } %>
+
+                    <!-- 下一頁 -->
+                    <a class="<%=pageInfo.isHasNextPage() ? "" : "disabled"%>"
+                        href="/message/message2?page=<%=pageInfo.getNextPage()%>&size=<%=pageInfo.getPageSize()%>">下一頁 &raquo;</a>
+            </div>
+            <br><br><br>
+            <a href="/employee/system">回管理系統</a>
+        </div>
+    </div>
+    <div id="main"></div>
+    <div id="footer"></div>
 </body>
 </html>

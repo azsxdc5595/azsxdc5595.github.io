@@ -10,31 +10,31 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.message;
+import com.github.pagehelper.Page;
 
 @Mapper
 public interface messageMapper {
-	//create
-	@Insert("Insert into message(memberno,title,content)" + "values(#{memberno},#{title},#{content})")
-	void add(message m);
-	
-	//read
-	@Select("select * from message")
-	List<message> queryAll();
-	
-	@Select("select * from message where memberno=#{memberno}")
-	List<message> queryByMemberno(String memberno);
-	
-	@Select("select * from message where id=#{id}")
-	message getMessageById(@Param("id") Integer id);
-	
-	//update
-	@Update("update message set title=#{title},content=#{content} where id=#{id}")
-	void update(message m);
-	
-	
-	//delete
-	@Delete("delete from message where id=#{id}")
-	void delete(Integer id);
-	
-	
+    // create
+    @Insert("INSERT INTO message(memberno, title, content) VALUES(#{memberno}, #{title}, #{content})")
+    void add(message m);
+
+    // read
+ // 分页查询所有留言
+    @Select("SELECT * FROM message WHERE memberno = #{memberno}")
+    Page<message> queryByMemberno(String memberno);
+    @Select("SELECT * FROM message")
+    Page<message> queryAll();
+
+    @Select("SELECT * FROM message WHERE id = #{id}")
+    message getMessageById(@Param("id") Integer id);
+
+    // update
+    @Update("UPDATE message SET title = #{title}, content = #{content} WHERE id = #{id}")
+    void update(message m);
+
+    // delete
+    @Delete("DELETE FROM message WHERE id = #{id}")
+    void delete(Integer id);
+
+    
 }

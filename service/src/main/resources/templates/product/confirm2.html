@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
+</head>
+
+<body>
+<div id="header"></div>
+<div id="navigater"></div>
+<div id="content">
+	<div id="pic">
+		<table width=450 border=1>
+			<tr>
+				<td colspan=2 align=center>
+				<div th:text="${session.M.name}"/>
+				這是你的訂單細目 <br>
+				訂單 數量=<p th:text="${session.L.size()}">
+			<tr>
+				<td>
+				<table>
+					<thead>
+						<tr>
+							<th>A
+							<th>B
+							<th>C
+					</thead>
+					<tbody>
+						<tr th:each="emp:${session.L}">
+							<td th:text="${emp.A}">
+							<td th:text="${emp.B}">
+							<td th:text="${emp.C}">
+					</tbody>
+				</table>			
+			<tr>
+				<td colspan=2 align=center>
+				<a href="/porder/porder">回上一頁</a>
+				<a href="/member/logout">登出</a>
+		</table>
+	</div>
+</div>
+<div id="footer"></div>
+
+</body>
+</html>

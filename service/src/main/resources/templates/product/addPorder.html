@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/st1.css">
+</head>
+<body>
+<div id="header"><div id="title">Ares system</div></div>
+<div id="content">
+    <div id="contentArea">
+        <h1>會員名: <span th:text="${session.M.name}"></span></h1>
+        <h2>品名: <span th:text="${session.productname}"></span></h2>
+        <form action="/porder/add" method="post">
+            <table border=1 align=center>       
+                <tr>					
+                    <td>數量<input th:value="${session.M.name}" type="hidden" name="name">
+                    <input th:value="${session.productname}" type="hidden" name="productname">
+                    <td><input type="number" name="amount" min="1" style="font-size:18px;text-align:center">
+                    <input th:value="${session.price}" type="hidden" name="price">
+                <tr>
+                    <td colspan=2>
+                        <input type="submit" value="加入購物車">
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="main"></div>
+<div id="footer"></div>
+</body>
+</html>
